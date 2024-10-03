@@ -12,6 +12,10 @@ ConnectDB()
 //app
 const app = express()
 app.use(cors())
+app.use((req,res,next)=>{
+    console.log('request ['+req.method.toUpperCase()+'] ' + req.originalUrl)
+    next()
+})
 
 //routes goes here
 
